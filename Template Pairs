@@ -19,14 +19,14 @@ template<typename TheType> class Pair {
 // equal to, or greater than the argument Pair
 template<typename TheType>
 char Pair<TheType>::CompareWith(Pair<TheType>* otherPair) {
-   if(Pair > otherPair){
-      return ">";
+   if((this->firstVal + this->secondVal)  > (otherPair->firstVal + otherPair->secondVal)){
+      return '>';
    }
-   else if(Pair == otherPair){
-      return "=";
+   else if((this->firstVal + this->secondVal)  == (otherPair->firstVal + otherPair->secondVal) ){
+      return '=';
    }
-   else if(Pair < otherPair){
-      return "<";
+   else if((this->firstVal + this->secondVal) < (otherPair->firstVal + otherPair->secondVal)){
+      return '<';
    }
 }
 
@@ -41,15 +41,16 @@ void Pair<TheType>::Input() {
 // Output a Pair 
 template<typename TheType>
 void Pair<TheType>::Output() {
-   cout << "[" << firstVal << " , " << secondVal << "]" << endl;
+   cout << "[" << firstVal << ", " << secondVal << "]";
 }
 
 // Output both pairs with a comparison symbol in between
 template<typename TheType>
 void Pair<TheType>::ShowComparison(Pair<TheType>* otherPair) {
-   Pair->OutPut;
-   Pair->CompareWith(otherPair);
-   otherPair->OutPut;
+   this->Output();
+   cout << " " << this->CompareWith(otherPair) << " ";
+   otherPair->Output();
+   cout << endl;
 }
 /*** End template class Pair ***/
 
